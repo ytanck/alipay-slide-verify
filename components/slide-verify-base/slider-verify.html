@@ -1,0 +1,23 @@
+<view class="slider-verify">
+  <view class="img-box"
+    style="width: {{imageWidth}}rpx; height: {{imageHeight}}rpx; background-image: url({{imageUrl}});">
+    <!-- 缺口位置 -->
+    <view class="gap"
+      style="top: {{pieceTop}}rpx; left: {{targetX}}rpx; width: {{pieceWidth}}rpx; height: {{pieceHeight}}rpx;" />
+    <!-- 拼图块 -->
+    <view class="piece {{isVerified ? 'ok' : ''}} {{isFailed ? 'fail' : ''}}"
+      style="top: {{pieceTop}}rpx; left: {{currentX}}rpx; width: {{pieceWidth}}rpx; height: {{pieceHeight}}rpx;
+      background-image: url({{imageUrl}}); background-position: -{{targetX}}rpx -{{pieceTop}}rpx; background-size: {{imageWidth}}rpx {{imageHeight}}rpx;">
+      <!-- <image src="{{imageUrl}}" mode="aspectFill" /> -->
+    </view>
+  </view>
+
+  <view class="track" style="width: {{imageWidth}}rpx;">
+    <view class="track-bar" style="width: {{thumbLeft}}rpx;" />
+    <text class="track-text {{isVerified ? 'ok' : ''}} {{isFailed ? 'fail' : ''}}">{{sliderText}}</text>
+    <view class="thumb {{isVerified ? 'ok' : ''}} {{isFailed ? 'fail' : ''}}" style="left: {{thumbLeft}}rpx;"
+      onTouchStart="onTouchStart" onTouchMove="onTouchMove" onTouchEnd="onTouchEnd">
+      <text>{{isVerified ? '✓' : '→'}}</text>
+    </view>
+  </view>
+</view>

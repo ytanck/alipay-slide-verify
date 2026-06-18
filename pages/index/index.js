@@ -4,7 +4,7 @@ Page({
     msg: '',
     sliderText: '向右滑动',
     accuracy: 3,
-    imgs: []
+    imgs: ['https://xiaojinhe-cdn.iyoudui.cn/upload/common/2026615/slider-bg.png','https://xiaojinhe-cdn.iyoudui.cn/upload/common/2023912/iqy.png','https://csopmweb.oss-cn-hangzhou.aliyuncs.com/ctopmweb/pic_1642579979477.jpeg']
   },
 
   onSuccess: function (e) {

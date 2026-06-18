@@ -1,0 +1,127 @@
+.slider-verify {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20rpx 10rpx;
+  background: #f5f5f5;
+  border-radius: 16rpx;
+}
+
+// 图片区域
+.img-box {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 16rpx;
+  overflow: hidden;
+  background: url('https://xiaojinhe-cdn.iyoudui.cn/upload/common/2026615/slider-bg.png') no-repeat center / contain;
+}
+
+// 缺口标记
+.gap {
+  position: absolute;
+  z-index: 2;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.3);
+  background: #ddd;
+}
+
+// 拼图块
+.piece {
+  position: absolute;
+  z-index: 3;
+  border-radius: 8rpx;
+  overflow: hidden;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.5);
+  border: 4rpx solid #fff;
+  box-sizing: border-box;
+
+  &.ok {
+    border-color: #1991fa;
+    box-shadow: 0 0 20rpx rgba(25, 145, 250, 0.5);
+  }
+
+  &.fail {
+    border-color: #f57a7a;
+    box-shadow: 0 0 20rpx rgba(255, 77, 79, 0.5);
+    animation: shake 0.4s ease;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10rpx); }
+  40% { transform: translateX(10rpx); }
+  60% { transform: translateX(-6rpx); }
+  80% { transform: translateX(6rpx); }
+}
+
+// 滑块轨道
+.track {
+  position: relative;
+  margin: 30rpx auto 0;
+  height: 80rpx;
+  background: #f5f5f5;
+  border-radius: 40rpx;
+  border: 2rpx solid #e8e8e8;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  .track-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #bae7ff;
+    border-radius: 40rpx 0 0 40rpx;
+  }
+
+  .track-text {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    font-size: 26rpx;
+    color: #999;
+    pointer-events: none;
+
+    &.ok { color: #1991fa; }
+    &.fail { color: #f57a7a; }
+  }
+}
+
+// 滑块按钮
+.thumb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80rpx;
+  height: 80rpx;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.15);
+  border: 2rpx solid #e0e0e0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+
+  text {
+    font-size: 32rpx;
+    color: #bbb;
+    font-weight: bold;
+  }
+
+  &.ok {
+    border-color: #1991fa;
+    background: #f6ffed;
+    text { color: #1991fa; }
+  }
+
+  &.fail {
+    border-color: #f57a7a;
+    background: #fff2f0;
+    text { color: #f57a7a; }
+  }
+}

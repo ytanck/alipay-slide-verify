@@ -45,6 +45,7 @@ alipay-slide-verify/
 ### 1. 引入组件
 
 将 `components/slide-verify/` 目录复制到你的支付宝小程序项目中。
+忽略 `components/slide-verify-base/` CSS基础版，不过兼容性更好，以防备用。
 
 在页面的 `index.json` 中注册组件：
 
