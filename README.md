@@ -6,6 +6,8 @@
 
 用户向右滑动滑块，将拼图块对准缺口位置即可完成验证。组件内置人机检测，可识别非人为操作（如脚本自动滑动）。
 
+<img src="./images/ScreenShot.png" width="300">
+
 ## 目录结构
 
 ```
@@ -31,6 +33,7 @@ alipay-slide-verify/
 ## 直接运行
 
 本项目是一个完整的支付宝小程序工程，可直接用支付宝开发者工具（IDE）打开 `alipay-slide-verify/` 目录运行。
+如需使用微信小程序，可以按wx:相应语法修改。
 
 1. 打开 [支付宝开发者工具](https://opendocs.alipay.com/mini/ide/download)
 2. 选择「打开项目」→ 选择 `alipay-slide-verify/` 目录
@@ -60,12 +63,10 @@ alipay-slide-verify/
 ```xml
 <slide-verify
   id="slideVerify"
-  l="{{42}}"
-  r="{{10}}"
   w="{{310}}"
   h="{{155}}"
   sliderText="向右滑动"
-  accuracy="{{3}}"
+  accuracy="{{5}}"
   show="{{true}}"
   imgs="{{imgs}}"
   onSuccess="onSuccess"
