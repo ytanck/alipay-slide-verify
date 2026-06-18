@@ -1,0 +1,23 @@
+<view class="slide-verify" style="width: {{canvasW}}px">
+  <view class="loading-mask" a:if="{{loading}}"></view>
+
+  <canvas type="2d" id="main-canvas" width="{{canvasW}}" height="{{canvasH}}" style="width: {{canvasW}}px; height: {{canvasH}}px" class="main-canvas" onReady="onMainCanvasReady"></canvas>
+
+  <cover-view class="refresh-icon" a:if="{{show}}" onTap="onRefreshTap">
+    <text class="refresh-icon-text">↻</text>
+  </cover-view>
+
+  <canvas type="2d" id="block-canvas" width="{{canvasW}}" height="{{canvasH}}" style="width: {{canvasW}}px; height: {{canvasH}}px" class="block-canvas" onReady="onBlockCanvasReady"></canvas>
+
+  <view class="slider-container {{activeClass}}">
+    <view class="slider-mask" style="width: {{maskWidth}}px">
+      <view class="slider-btn" style="left: {{sliderLeft}}px"
+        onTouchStart="onTouchStart"
+        onTouchMove="onTouchMove"
+        onTouchEnd="onTouchEnd">
+        <view class="slider-btn-icon"></view>
+      </view>
+    </view>
+    <text class="slider-text">{{sliderText}}</text>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "slide-verify": "/components/slide-verify/index"
+  }
+}

@@ -1,0 +1,126 @@
+/* 滑动验证组件 */
+
+.slide-verify {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.loading-mask {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+}
+
+/* 主画布 */
+.main-canvas {
+  display: block;
+  box-sizing: border-box;
+}
+
+/* 拼图块画布 */
+.block-canvas {
+  position: absolute;
+  left: 0; top: 0;
+  box-sizing: border-box;
+}
+
+.refresh-icon {
+  position: absolute;
+  right: 0; top: 0;
+  width: 34px; height: 34px;
+  display: flex;
+  align-items: center; justify-content: center;
+  z-index: 100;
+}
+
+.refresh-icon-text {
+  font-size: 22px;
+  color: #999;
+  line-height: 1;
+}
+
+/* 滑动条 */
+.slider-container {
+  position: relative;
+  text-align: center;
+  width: 100%; height: 40px;
+  line-height: 40px;
+  margin-top: 15px;
+  background: #f7f9fa;
+  color: #45494c;
+  border: 1px solid #e4e7eb;
+  box-sizing: border-box;
+}
+
+.slider-mask {
+  position: absolute;
+  left: 0; top: 0;
+  height: 40px;
+  border: 0 solid #1991fa;
+  background: #d1e9fe;
+  box-sizing: border-box;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 0; left: 0;
+  width: 40px; height: 40px;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center; justify-content: center;
+  box-sizing: border-box;
+  transition: background 0.2s linear;
+}
+
+/* 滑块箭头图标 */
+.slider-btn-icon {
+  width: 0; height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid #ccc;
+}
+
+/* 激活态 */
+.container-active .slider-mask { height: 38px; border-width: 1px; }
+.container-active .slider-btn { height: 38px; top: -1px; border: 1px solid #1991fa; }
+.container-active .slider-btn-icon { border-left-color: #1991fa; }
+
+/* 成功态 */
+.container-success .slider-mask { height: 38px; border: 1px solid #52ccba; background-color: #d2f4ef; }
+.container-success .slider-btn { height: 38px; top: -1px; border: 1px solid #52ccba; background-color: #52ccba; }
+.container-success .slider-btn-icon {
+  width: 8px; height: 14px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  border-radius: 0;
+  transform: rotate(45deg);
+}
+
+/* 失败态 */
+.container-fail .slider-mask { height: 38px; border: 1px solid #f57a7a; background-color: #fce1e1; }
+.container-fail .slider-btn { height: 38px; top: -1px; border: 1px solid #f57a7a; background-color: #f57a7a; }
+.container-fail .slider-btn-icon {
+  width: 14px; height: 2px;
+  border: none;
+  background: #fff;
+  transform: rotate(45deg);
+  position: relative;
+}
+.container-fail .slider-btn-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 14px; height: 2px;
+  background: #fff;
+  transform: rotate(-90deg);
+}
+
+/* 激活/成功/失败时隐藏提示文字 */
+.container-active .slider-text,
+.container-success .slider-text,
+.container-fail .slider-text {
+  display: none;
+}

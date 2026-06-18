@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "defaultTitle": "滑动验证示例",
+    "titleBarColor": "#fff",
+    "backgroundColor": "#f5f5f5"
+  }
+}
